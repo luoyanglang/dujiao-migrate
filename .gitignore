@@ -1,0 +1,29 @@
+# 二进制文件
+dujiao-migrate
+dujiao-migrate-*
+*.exe
+
+# 配置文件（包含敏感信息）
+config.yaml
+*.db
+
+# Go
+*.o
+*.a
+*.so
+*.test
+*.out
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 日志
+*.log
+
+# 临时文件
+tmp/
+temp/

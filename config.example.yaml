@@ -1,0 +1,43 @@
+# 独角数卡迁移工具配置文件示例
+
+# 老版数据库配置
+old_db:
+  driver: "mysql"          # 数据库驱动: mysql, postgres, sqlite
+  host: "127.0.0.1"
+  port: 3306
+  user: "root"
+  password: "your_password"
+  database: "dujiaoka"
+  charset: "utf8mb4"
+  ssl_mode: "disable"      # PostgreSQL SSL 模式
+
+# SQLite 示例:
+# old_db:
+#   driver: "sqlite"
+#   database: "/path/to/dujiaoka.db"
+
+# PostgreSQL 示例:
+# old_db:
+#   driver: "postgres"
+#   host: "127.0.0.1"
+#   port: 5432
+#   user: "postgres"
+#   password: "your_password"
+#   database: "dujiaoka"
+#   ssl_mode: "disable"
+
+# 新版 API 配置
+new_api:
+  base_url: "http://127.0.0.1:8080/api/v1/admin"
+  username: "admin"
+  password: "admin123"
+
+# 迁移选项
+options:
+  retry_times: 3        # API 请求重试次数
+  retry_delay: 1        # 重试间隔（秒）
+  skip_existing: true   # 跳过已存在的数据
+  migrate_cards: true   # 是否迁移卡密
+  only_active: true     # 只迁移已启用的数据
+  batch_size: 500       # 卡密批量导入大小
+  old_site_path: ""     # 老版站点路径（用于图片迁移，如 /www/wwwroot/dujiaoka）
